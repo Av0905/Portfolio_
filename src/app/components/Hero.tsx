@@ -1,10 +1,9 @@
-import { ArrowDown, FileText, ChevronDown, Code2, Palette } from "lucide-react";
+import { ArrowDown, FileText } from "lucide-react";
 import { Button } from "./ui/button";
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 
 export function Hero() {
-  const [isResumeOpen, setIsResumeOpen] = useState(false);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -88,74 +87,20 @@ export function Hero() {
             View My Work
           </Button>
           
-          {/* BUTTON 2: Download CV Dropdown */}
-          <div className="relative w-full sm:w-auto">
-            <motion.button
-              onClick={() => setIsResumeOpen(!isResumeOpen)}
-              onBlur={() => setTimeout(() => setIsResumeOpen(false), 200)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className={`
-                h-14 px-8 w-full sm:w-auto flex items-center justify-center gap-2 rounded-full text-lg font-medium border-2 transition-all duration-300
-                ${isResumeOpen 
-                    ? "bg-white text-black border-white" 
-                    : "bg-transparent text-zinc-300 border-zinc-700 hover:border-zinc-100 hover:text-white"
-                }
-              `}
+          <a
+            href="/ARYAN RESUME.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto"
+          >
+            <Button
+              variant="outline"
+              className="h-14 px-8 w-full flex items-center justify-center gap-2 rounded-full text-lg font-medium border-zinc-700 text-zinc-300 hover:border-zinc-100 hover:text-white hover:bg-white/5 transition-all duration-300"
             >
               <FileText className="w-5 h-5" />
               Download CV
-              <ChevronDown 
-                className={`w-4 h-4 transition-transform duration-300 ${isResumeOpen ? "rotate-180" : ""}`} 
-              />
-            </motion.button>
-
-            {/* The Clean Glass Dropdown */}
-            <AnimatePresence>
-              {isResumeOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: 15, scale: 0.95 }}
-                  animate={{ opacity: 1, y: 5, scale: 1 }}
-                  exit={{ opacity: 0, y: 15, scale: 0.95 }}
-                  transition={{ duration: 0.2 }}
-                  // FIX 4: ADDED z-[100] to make sure this dropdown is ALWAYS on top
-                  className="absolute top-full left-0 right-0 mt-2 bg-zinc-950/90 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden shadow-2xl shadow-purple-900/20 p-2 z-[100] min-w-[280px] sm:min-w-full"
-                >
-                   <div className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider">Select Resume</div>
-                   
-                   {/* OPTION 1: Software Engineer */}
-                   <a
-                      href="/resume-software.pdf" 
-                      target="_blank"
-                      className="flex items-center gap-4 px-3 py-3 text-zinc-300 hover:text-white hover:bg-white/10 rounded-xl transition-all group"
-                    >
-                      <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-colors">
-                        <Code2 className="w-5 h-5" />
-                      </div>
-                      <div className="flex flex-col text-left">
-                        <span className="font-semibold text-sm">Software Engineer</span>
-                        <span className="text-xs text-zinc-500 group-hover:text-zinc-300">View PDF</span>
-                      </div>
-                    </a>
-
-                   {/* OPTION 2: Graphic Designer */}
-                   <a
-                      href="/resume-designer.pdf" 
-                      target="_blank"
-                      className="flex items-center gap-4 px-3 py-3 text-zinc-300 hover:text-white hover:bg-white/10 rounded-xl transition-all group"
-                    >
-                      <div className="w-10 h-10 rounded-full bg-purple-500/10 flex items-center justify-center text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition-colors">
-                        <Palette className="w-5 h-5" />
-                      </div>
-                      <div className="flex flex-col text-left">
-                        <span className="font-semibold text-sm">Graphic Designer</span>
-                        <span className="text-xs text-zinc-500 group-hover:text-zinc-300">View PDF</span>
-                      </div>
-                    </a>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
+            </Button>
+          </a>
 
         </motion.div>
       </div>
