@@ -5,6 +5,17 @@ import { motion, AnimatePresence } from "motion/react";
 export function Projects() {
   const projects = [
     {
+      title: "GourmetHub - Premium Ordering",
+      description: "A modern Food Court platform with a seamless ordering experience. Features a responsive UI, interactive menu categories, and a premium aesthetic designed for high-performance online food services.",
+      type: "Web Development",
+      icon: Smartphone,
+      image: "/gourmethub.png",
+      tags: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
+      github: "https://github.com/Av0905/Foodcourt-",
+      demo: "https://foodcourt-lilac.vercel.app/",
+      accent: "from-orange-600/20 to-red-600/20",
+    },
+    {
       title: "Performix Workforce Intelligence",
       description: "An AI-powered HR Intelligence platform specifically tailored for IT organizations. It provides advanced talent analytics, evaluates onboarding readiness, and monitors performance stability to optimize workforce efficiency.",
       type: "AI & HR Tech",
