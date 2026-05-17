@@ -5,6 +5,17 @@ import { motion, AnimatePresence } from "motion/react";
 export function Projects() {
   const projects = [
     {
+      title: "HarvestIQ - Data-Driven Farming",
+      description: "A modern agriculture intelligence platform designed to increase farm performance. Features practical analytics, forecasting, field insights with a vibrant UI, glassmorphism, and scroll-triggered animations.",
+      type: "Web Development",
+      icon: Globe,
+      image: "/harvestiq.png",
+      tags: ["HTML5", "CSS3", "JavaScript", "UI/UX", "Animations"],
+      github: null,
+      demo: "https://neo-site-studio-bp3n.vercel.app/",
+      accent: "from-green-600/20 to-emerald-600/20",
+    },
+    {
       title: "GourmetHub - Premium Ordering",
       description: "A modern Food Court platform with a seamless ordering experience. Features a responsive UI, interactive menu categories, and a premium aesthetic designed for high-performance online food services.",
       type: "Web Development",
